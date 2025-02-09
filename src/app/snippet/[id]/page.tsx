@@ -11,7 +11,7 @@ type SnippetDetailsProps = {
   params: Promise<{ id: string }>;
 };
 
-const SnippetDetailsProps: React.FC<SnippetDetailsProps> = async ({
+const SnippetDetails: React.FC<SnippetDetailsProps> = async ({
   params,
 }) => {
   const id = Number((await params).id);
@@ -51,7 +51,7 @@ const SnippetDetailsProps: React.FC<SnippetDetailsProps> = async ({
   );
 };
 
-export default SnippetDetailsProps;
+export default SnippetDetails;
 
 export const generateStaticParams = async()=>{
   const snippets = await prisma.snippet.findMany();
